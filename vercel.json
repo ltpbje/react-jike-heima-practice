@@ -4,5 +4,14 @@
       "source": "./src/api/(.*)",
       "destination":"./src/api/proxy" 
     }
+  ],
+    "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "buildCommand": "npm i --legacy-peer-deps && npm run build"
+      }
+    }
   ]
 }
